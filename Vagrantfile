@@ -36,8 +36,11 @@ Vagrant::Config.run do |config|
         chef.cookbooks_path = "~/Development/cookbooks"
         chef.roles_path = "~/Development/vagrant/roles"
         chef.data_bags_path = "~/Development/vagrant/data_bags"
-        chef.add_recipe("users::sysadmins")
-        chef.add_recipe("toolstack")
+	chef.run_list = [
+	   "role[base]"
+	]
+        #chef.add_recipe("users::sysadmins")
+        #chef.add_recipe("toolstack")
         chef.json = {
           #'GRAYLOG2' => {
           #  'MONGO_HOST' => "0.0.0.0"

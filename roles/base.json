@@ -1,0 +1,11 @@
+{
+  "name": "base",
+  "chef_type": "role",
+  "json_class": "Chef::Role",
+  "description": "The base role all systems are applied to",
+  "run_list": [
+    "recipe[apt]",
+    "recipe[toolstack]",
+    "recipe[users::sysadmins]"
+  ]
+}
